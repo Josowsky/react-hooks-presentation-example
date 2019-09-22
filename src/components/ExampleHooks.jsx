@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-const ExampleHooks = () => (
-  <div>
-    <h1>test</h1>
+const ExampleHooks = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+
+  return (
+    <div>
+    <div>
+      <button onClick={() => setCount(count + 1)}>Click me ({count})</button>
+    </div>
   </div>
-);
+  )
+}
 
 export default ExampleHooks;
