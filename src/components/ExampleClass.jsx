@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
+import { StyledRow, StyledButton } from "./Example.styles";
 
 class ExampleClass extends Component {
   state = {
@@ -10,7 +12,7 @@ class ExampleClass extends Component {
     const { counter } = this.state;
 
     document.title = `You clicked ${counter} times`;
-    window.addEventListener('resize', this.handleWindowResize);
+    window.addEventListener("resize", this.handleWindowResize);
   }
 
   componentDidUpdate() {
@@ -20,7 +22,7 @@ class ExampleClass extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowResize);
+    window.removeEventListener("resize", this.handleWindowResize);
   }
 
   handleWindowResize = () => {
@@ -40,10 +42,12 @@ class ExampleClass extends Component {
 
     return (
       <main>
-        <div>
-          <button onClick={this.handleButtonClick}>Click me ({counter})</button>
-        </div>
-        <div>Width: {width}</div>
+        <StyledRow>
+          <StyledButton onClick={this.handleButtonClick}>
+            Click me ({counter})
+          </StyledButton>
+        </StyledRow>
+        <StyledRow>Width: {width}</StyledRow>
       </main>
     );
   }

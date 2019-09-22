@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { StyledRow, StyledButton } from "./Example.styles";
+
 const ExampleHooks = () => {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -19,14 +21,14 @@ const ExampleHooks = () => {
   };
 
   return (
-    <div>
-      <div>
-        <button onClick={handleButtonClick}>Click me ({count})</button>
-      </div>
-      <div>
-        <p>{width}</p>
-      </div>
-    </div>
+    <main>
+      <StyledRow>
+        <StyledButton onClick={handleButtonClick}>
+          Click me ({count})
+        </StyledButton>
+      </StyledRow>
+      <StyledRow>Width {width}</StyledRow>
+    </main>
   );
 };
 
